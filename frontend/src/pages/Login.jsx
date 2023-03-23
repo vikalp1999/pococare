@@ -46,7 +46,7 @@ const Login = () => {
               <Input id="email" type="email" />
             </FormControl>
             <FormControl>
-              <FormLabel htmlFor="email">Email</FormLabel>
+              <FormLabel htmlFor="email">Password</FormLabel>
               <Input id="email" type="email" />
             </FormControl>
             
