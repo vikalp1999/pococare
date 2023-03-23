@@ -41,7 +41,7 @@ const Home = () => {
           lg: '12',
         }}
       >
-        <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+        <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:'repeat(3, 1fr)'}} gap={6}>
         {state?.data?.map((el, index) => (
             <ProductCard name={el.name} price={el.price} description={el.description}/>
           ))}
