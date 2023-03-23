@@ -42,8 +42,8 @@ const Home = () => {
         }}
       >
         <Grid templateColumns={{sm:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:'repeat(3, 1fr)'}} gap={6}>
-        {state?.data?.map((el, index) => (
-            <ProductCard name={el.name} price={el.price} description={el.description}/>
+        {state?.data?.map((el, i) => (
+            <ProductCard key={i} name={el.name} price={el.price} description={el.description}/>
           ))}
   
        </Grid>
