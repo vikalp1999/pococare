@@ -1,9 +1,57 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../redux/Products/product.actions';
+import { refreshToken } from '../redux/auth/auth.action';
+import { Grid, GridItem } from '@chakra-ui/react'
+
+import Navbar from './Navbar';
+import { Box, Text } from '@chakra-ui/react';
+import ProductCard from '../components/Productcard';
 const Home = () => {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.product);
+  console.log(state.data)
+  useEffect(() => {
+    dispatch(getProducts()).then((res) => {
+      dispatch(refreshToken());
+    });
+  }, []);
+  if (state.loading) {
+    return (
+      <Text fontSize="4xl" textAlign="center" mt="250px">
+        ...Loading
+      </Text>
+    );
+  }
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <Navbar />
+      <Box
+        maxW="7xl"
+        mx="auto"
+        px={{
+          base: '4',
+          md: '8',
+          lg: '12',
+        }}
+        py={{
+          base: '6',
+          md: '8',
+          lg: '12',
+        }}
+      >
+        <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+        {state?.data?.map((el, index) => (
+            <ProductCard name={el.name} price={el.price} description={el.description}/>
+          ))}
+  
+       </Grid>
+          
+        
+      </Box>
+    </>
+  );
+};
 
-export default Home
+export default Home;

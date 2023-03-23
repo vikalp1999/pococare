@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './pages/Login';
+
+import AllRoutes from './Routes/AllRoutes';
 
 function App() {
-  return (
-   <Login/>
-  );
+  return <AllRoutes />;
 }
 
 export default App;
