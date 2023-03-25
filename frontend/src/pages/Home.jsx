@@ -8,6 +8,7 @@ import { Grid, GridItem } from '@chakra-ui/react'
 import Navbar from './Navbar';
 import { Box, Text } from '@chakra-ui/react';
 import ProductCard from '../components/Productcard';
+import Loader from '../components/Loader';
 const Home = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.product);
@@ -19,9 +20,9 @@ const Home = () => {
   }, []);
   if (state.loading) {
     return (
-      <Text fontSize="4xl" textAlign="center" mt="250px">
-        ...Loading
-      </Text>
+      <Box margin="auto">
+      <Loader/>
+      </Box>
     );
   }
   return (

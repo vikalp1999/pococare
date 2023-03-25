@@ -7,7 +7,7 @@ const ProductCard = ({name,price,description}) => {
     <Card maxW='sm'>
     <CardBody>
       <Image
-        src='https://www.pococare.com/image.png'
+        src='https://media.istockphoto.com/id/1300036753/photo/falling-antibiotics-healthcare-background.jpg?s=612x612&w=0&k=20&c=oquxJiLqE33ePw2qML9UtKJgyYUqjkLFwxT84Pr-WPk='
         alt='Green double couch with wooden legs'
         borderRadius='lg'
       />
@@ -17,7 +17,7 @@ const ProductCard = ({name,price,description}) => {
           {description}
         </Text>
         <Text color='blue.600' fontSize='2xl'>
-          {price}
+          Price : {price}
         </Text>
       </Stack>
     </CardBody>

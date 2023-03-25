@@ -12,6 +12,7 @@ import {
   Input,
   Stack,
   Text,
+  Image
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../redux/auth/auth.action';
@@ -44,6 +45,10 @@ const Signup = () => {
       <Stack spacing="8">
         <Stack spacing="6">
           <Stack spacing={{ base: '2', md: '3' }} textAlign="center">
+          <Box margin="auto">
+              <Image
+               src="https://www.pococare.com/image.png"/>
+            </Box>
             <Heading size={{ base: 'xs', md: 'sm' }}>
               Log in to your account
             </Heading>

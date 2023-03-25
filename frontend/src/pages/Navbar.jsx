@@ -55,8 +55,9 @@ const Navbar = () => {
               }}
             >
               <HStack spacing={'10'}>
-               
-                <Link to="/login">Sign in</Link>
+              <Link to="/login"><Button>About</Button></Link>
+              <Link to="/login"><Button>Cart</Button></Link>
+                <Link to="/login"><Button>Sign in</Button></Link>
               </HStack>
             </HStack>
             <Button colorScheme="brand" size="sm">
